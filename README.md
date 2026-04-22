@@ -15,3 +15,17 @@ Email processing system based on LangGraph
 
 # Install the required packages
 pip install -q langgraph langchain_openai langchain_huggingface pyppeteer
+
+## Full Stack
+
+| Tool | Version | Role |
+|---|---|---|
+| **Python** | 3.14.3 | Runtime |
+| **LangGraph** | 1.1.9 | Agent graph orchestration |
+| **LangChain Core** | 1.3.0 | LLM abstraction layer |
+| **LangChain Ollama** | 1.1.0 | Ollama integration for LangChain |
+| **Ollama** | 0.17.2 | Local LLM server |
+| **Qwen2 7B** | — | LLM model (via Ollama) |
+| **mermaid.ink** | — | Graph diagram rendering (web API) |
+| **requests** | 2.33.1 | HTTP client (used to call mermaid.ink) |
+| **uv** | — | Python package manager / venv |
