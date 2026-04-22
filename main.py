@@ -16,7 +16,7 @@ class EmailState(TypedDict):
 
 def read_email(state: EmailState):
     email = state["email"]
-    print(f"Alfred is processing an email from {email['sender']} with subject: {email['subject']}")
+    print(f"Processing an email from {email['sender']} with subject: {email['subject']}")
     return {}
 
 
@@ -90,7 +90,7 @@ Draft a brief, professional response that I can review and personalize before se
     }
 
 
-def notify_owner(state: EmailState):
+def notify_me(state: EmailState):
     email = state["email"]
 
     print("\n" + "=" * 50)
@@ -120,7 +120,7 @@ email_graph.add_node("read_email", read_email)  # the read_email node executes t
 email_graph.add_node("classify_email", classify_email)  # the classify_email node will execute the classify_email function
 email_graph.add_node("handle_spam", handle_spam)  #same logic
 email_graph.add_node("drafting_response", drafting_response)  #same logic
-email_graph.add_node("notify_owner", notify_owner)  # same logic
+email_graph.add_node("notify_me", notify_me)  # same logic
 
 # Add edges
 email_graph.add_edge(START, "read_email")  # After starting we go to the "read_email" node
@@ -139,8 +139,8 @@ email_graph.add_conditional_edges(
 
 # Add final edges
 email_graph.add_edge("handle_spam", END)  # after handling spam we always end
-email_graph.add_edge("drafting_response", "notify_owner")
-email_graph.add_edge("notify_owner", END)
+email_graph.add_edge("drafting_response", "notify_me")
+email_graph.add_edge("notify_me", END)
 
 # Compile the graph
 compiled_graph = email_graph.compile()
@@ -161,25 +161,21 @@ def save_graph_image(graph, path="graph.png"):
 save_graph_image(compiled_graph)
 emails = [
     {
-        "label": "LEGITIMATE",
         "sender": "Dr. Sarah Collins",
         "subject": "Your annual check-up results",
-        "body": "Dear Sir, your blood test results from last Tuesday are in. Everything looks normal. Please call the clinic at your earliest convenience to schedule a follow-up. Best regards, Dr. Collins."
+        "body": "Dear Mr. Doe, your blood test results from last Tuesday are in. Everything looks normal. Please call the clinic at your earliest convenience to schedule a follow-up. Best regards, Dr. Collins."
     },
     {
-        "label": "LEGITIMATE",
         "sender": "Alfred Pennyworth",
         "subject": "Tonight's dinner reservation",
         "body": "Sir, I have confirmed your reservation at Le Bernardin for 8 PM tonight. Your guest, Mr. Fox, has been notified. The car will be ready at 7:30 PM."
     },
     {
-        "label": "SPAM",
         "sender": "Nigerian Prince <prince.royale@quickmail.net>",
         "subject": "URGENT: $45,000,000 transfer — your help needed",
         "body": "Dear Friend, I am a prince from Nigeria with $45 million USD frozen in a bank account. I need your help to transfer the funds. You will receive 30% commission. Please send your bank details immediately. God bless."
     },
     {
-        "label": "SPAM",
         "sender": "SlimFast Pills <noreply@bestpills4u.biz>",
         "subject": "Lose 30 pounds in 7 days — GUARANTEED!!!",
         "body": "AMAZING NEW PILL dissolves belly fat overnight!! Doctors HATE this trick. Click here NOW for a FREE trial. Limited stock. ACT FAST!!! www.bestpills4u.biz/order"
@@ -187,7 +183,7 @@ emails = [
 ]
 
 for email in emails:
-    print(f"\nProcessing {email['label']} email from {email['sender']}...")
+    print(f"\nProcessing email from {email['sender']}...")
     compiled_graph.invoke({
         "email": email,
         "is_spam": None,
