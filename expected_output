@@ -1,0 +1,65 @@
+% python3 main.py 
+
+Processing LEGITIMATE email from Dr. Sarah Collins...
+Alfred is processing an email from Dr. Sarah Collins with subject: Your annual check-up results
+ham
+
+==================================================
+Sir, you've received an email from Dr. Sarah Collins.
+Subject: Your annual check-up results
+
+I've prepared a draft response for your review:
+--------------------------------------------------
+Subject: Acknowledgment of Annual Check-Up Results
+
+Dear Dr. Sarah Collins,
+
+Thank you for sharing my annual check-up results from last Tuesday. I appreciate the promptness with which you have provided me with this information.
+
+I am glad to hear that everything appears normal based on the blood test results. Your professional care and attention are highly valued, and I look forward to discussing these findings in more detail during our scheduled follow-up appointment.
+
+Please let me know your availability for a call or an in-person visit at your earliest convenience. I would like to schedule this follow-up as soon as possible so that we can address any questions or concerns I may have regarding my health status.
+
+Thank you once again for your diligent work and dedication to ensuring my well-being. Your expertise is greatly appreciated, and I look forward to continuing our partnership in maintaining optimal health.
+
+Best regards,
+
+[Your Name]
+==================================================
+
+
+Processing LEGITIMATE email from Alfred Pennyworth...
+Alfred is processing an email from Alfred Pennyworth with subject: Tonight's dinner reservation
+ham
+
+==================================================
+Sir, you've received an email from Alfred Pennyworth.
+Subject: Tonight's dinner reservation
+
+I've prepared a draft response for your review:
+--------------------------------------------------
+Subject: Confirmation of Tonight's Dinner Reservation
+
+Dear Alfred,
+
+Thank you for your email regarding the dinner reservation at Le Bernardin tonight. I appreciate your prompt confirmation and the notification to Mr. Fox.
+
+I would like to confirm our reservation is indeed set for 8 PM as planned, with the car ready by 7:30 PM. Your attention to detail in arranging this evening's transportation ensures a smooth transition from our location to the restaurant.
+
+Please let me know if there are any further details or adjustments needed before tonight. I look forward to enjoying an excellent meal and company at Le Bernardin.
+
+Best regards,
+
+[Your Name]
+==================================================
+
+
+Processing SPAM email from Nigerian Prince <prince.royale@quickmail.net>...
+Alfred is processing an email from Nigerian Prince <prince.royale@quickmail.net> with subject: URGENT: $45,000,000 transfer — your help needed
+spam
+Marked the email as spam.
+
+Processing SPAM email from SlimFast Pills <noreply@bestpills4u.biz>...
+Alfred is processing an email from SlimFast Pills <noreply@bestpills4u.biz> with subject: Lose 30 pounds in 7 days — GUARANTEED!!!
+spam
+Marked the email as spam.
